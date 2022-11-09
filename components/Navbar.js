@@ -1,14 +1,19 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/solid'
 import Link from 'next/link'
 
 function Navbar() {
+
+  const [trekDropDown, setTrekDropDown] = useState(false)
+  const [dropDowntour, setDropDowntour] = useState(false)
+
   return (
   <>
     <header className='sticky top-0 z-50 '>
 
       {/* //TOP NAV */}
+
         {/* //LOGO */}
         <div className=' mx-auto flex bg-white z-50 sticky top-0 shadow-xl py-2 px-1 flex-grow md:py-3 flex-shrink-0 md:shadow-sm'>
 
@@ -36,18 +41,32 @@ function Navbar() {
 
         {/* //BOTTOM NAV */}
         <div className='bg-white sticky top-20 z-40  shadow-xl'>
-      <ul className='flex justify-center items-center space-x-6 '>
-        <Link href="/"><a><li className='p-2 cursor-pointer'>Home</li></a></Link>
+      <ul className='flex justify-start items-center space-x-6 '>
+        <Link href="/"><li className='p-2 cursor-pointer'>Home</li></Link>
         {/* //dropdown */}
-        <Link href="/trek"><a><li className='p-2 cursor-pointer'>Nepal Trekking</li></a></Link>
-        <Link href="/tour"><a><li className='p-2 cursor-pointer'>Nepal Tour</li></a></Link>
-        <Link href="/adventure"><a><li className='p-2 cursor-pointer'>Adventure Activities</li></a></Link>
-        <Link href="/hiking"><a><li className='p-2 cursor-pointer'>Hiking in Nepal</li></a></Link>
+        <Link href="/destinaton/trek">
+          <li 
+        onMouseOver={()=>setTrekDropDown(true)} 
+        onMouseLeave={()=>setTrekDropDown(false)} 
+        
+        className='p-2 relative cursor-pointer'>Nepal Trekking</li></Link>
+          {trekDropDown && <div className='absolute top-10 right-[1100px]  w-20 h-20  bg-green-400'>
 
-        <Link href="/about"><a><li className='p-2 cursor-pointer'>About</li></a></Link>
-        <Link href="/contact"><a><li className='p-2 cursor-pointer'>Contacts us.</li></a></Link>
+          </div>}
+        <Link href="/destinaton/tour"><li  onMouseOver={()=>setDropDowntour(true)} 
+        onMouseLeave={()=>setDropDowntour(false)}
+        className='p-2 relative cursor-pointer'>Nepal Tour</li></Link>
+         {dropDowntour && <div className='absolute top-10 right-[950px]  w-20 h-20  bg-green-400'>
+
+</div>}
+        <Link href="/destinaton/adventure"><li className='p-2 cursor-pointer'>Adventure Activities</li></Link>
+        <Link href="/destinaton/hike"><li className='p-2 cursor-pointer'>Hiking in Nepal</li></Link>
+
+        <Link href="/about"><li className='p-2 cursor-pointer'>About</li></Link>
+        <Link href="/contact"><li className='p-2 cursor-pointer'>Contact us.</li></Link>
 
         </ul>
+        <div></div>
     </div>
     </header>
 
