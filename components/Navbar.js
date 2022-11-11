@@ -41,7 +41,7 @@ function Navbar() {
 
         {/* //BOTTOM NAV */}
         <div className='bg-white sticky top-20 z-40  shadow-xl'>
-      <ul className='flex justify-start items-center space-x-6 '>
+      <ul className='flex justify-center items-center space-x-6 '>
         <Link href="/"><li className='p-2 cursor-pointer'>Home</li></Link>
         {/* //dropdown */}
         <Link href="/destinaton/trek">
