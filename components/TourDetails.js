@@ -1,23 +1,27 @@
 import { ChevronDownIcon, ChevronUpIcon, ClockIcon, MapPinIcon } from '@heroicons/react/20/solid'
 import React, { useState } from 'react'
 import { FaBed, FaSign, FaChartArea } from 'react-icons/fa';
+import { useRouter } from 'next/router'
+import mongoose from 'mongoose';
+import Destination from '../Models/Destination';
 
+function TourDetails({destination}) {
+    const router = useRouter()
+    const { slug0,slug1,slug2 } = router.query
 
-function TourDetails() {
     const [showMore, setShowMore] = useState(false)
-
     return (
         <div className='p-2'>
             <div className='bg-green-700  shadow-xl pl-8 rounded-xl '>
                 <h2 className='text-white  text-xl px-2 pt-2 lg:px-5 lg:pt-5  '>Trip Price :</h2>
-                <h1 className='text-3xl p-2 lg:px-5 lg:pt-5 text-white font-semibold'>US$ 725</h1>
+                <h1 className='text-3xl p-2 lg:px-5 lg:pt-2 pb-3 text-white font-semibold'>US$ {destination.price}</h1>
             </div>
             <div className='bg-black flex-col shadow-xl pl-4 lg:p-6 p-2 rounded-xl mt-5'>
                 <div className='ml-4 flex p-1 lg:p-4'>
                     <ClockIcon className='w-5 h-5 text-white mt-2' />
                     <div>
                         <h2 className='text-white  text-sm px-5  '>TRIP DURATION</h2>
-                        <h1 className='text-white text-xl font-semibold px-5 ' >12 DAYS</h1>
+                        <h1 className='text-white text-xl font-semibold px-5 ' >{destination.tripDuration} DAYS</h1>
                     </div>
                 </div>
                 <div className='ml-4 flex p-1 lg:p-4'>
@@ -31,7 +35,7 @@ function TourDetails() {
                     <h1 className='w-5 h-5 text-white  mt-1 lg:mt-2' ><FaChartArea /></h1>
                     <div>
                         <h2 className='text-white  text-sm px-5  '>TRIP DIFFICULTY</h2>
-                        <h1 className='text-white text-xl font-semibold px-5 ' >MODERATE </h1>
+                        <h1 className='text-white text-xl font-semibold px-5 ' >{destination.tripDifficulty} </h1>
                     </div>
                 </div>
                 <div className='ml-4 flex p-1 lg:p-4'>
@@ -50,7 +54,7 @@ function TourDetails() {
                 </div>
 
                 <button onClick={() => setShowMore(!showMore)}
-                    className='bg-white p-4 mb-2 mt-2  lg:mb-6 flex cursor-pointer rounded-md text-center'>
+                    className='bg-white p-4 my-2 ml-8  lg:mb-6 flex cursor-pointer rounded-md text-center'>
 
                         
                     {showMore ?<>
@@ -79,3 +83,6 @@ function TourDetails() {
 }
 
 export default TourDetails
+
+
+    

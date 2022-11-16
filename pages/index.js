@@ -1,8 +1,6 @@
 import Head from 'next/head'
 import Banner from '../components/Banner'
 import BestSelling from '../components/BestSelling'
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
 import Testimonials from '../components/Testimonials'
 
 export default function Home() {
@@ -17,13 +15,13 @@ export default function Home() {
 
      <main className='max-w-screen-2xl mx-auto'>
       {/* <CopiedNavbar /> */}
-      <Banner />
+       <Banner />
       <Testimonials />
       <BestSelling />
      </main>
 
      <footer>
-      <Footer />
+      
      </footer>
     </div>
   )
