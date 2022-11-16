@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 import React, { Fragment, useRef, useState } from 'react'
-import { Bars3Icon, ChevronDownIcon, MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/solid'
+import { Bars3Icon, ChevronDownIcon, EnvelopeIcon, MagnifyingGlassIcon, PhoneIcon, XMarkIcon } from '@heroicons/react/24/solid'
 import VerticalDropdown from './VerticalDropdown'
 
 function Navbar() {
@@ -19,7 +19,6 @@ function Navbar() {
 
     }
   }
-  
 
   const [navMenu, setNavMenu] = useState(false)
 
@@ -52,52 +51,59 @@ function Navbar() {
 
   return (
     <>
-      <header className='sticky top-0 z-50 '>
+      <header className='sticky w-full top-0 z-50 '>
 
-        {/* //TOP NAV */}
+    
+        <div className=' w-full flex flex-row bg-white z-50 lg:justify-start justify-center shadow-xl py-2 px-1 flex-grow lg:py-3 lg:shadow-sm '>   
+
 
         {/* //LOGO */}
-        <div className=' mx-auto flex bg-white z-50 sticky top-0 shadow-xl py-2 px-1 flex-grow lg:py-3 flex-shrink-0 lg:shadow-sm'>
-
-          <div className='flex h-16 w-32 relative mt-2 object-contain cursor-pointer flex-grow sm:flex-grow-0'>
-            <Image className=''
+          <div className='flex h-16 w-32 relative mt-2  object-contain cursor-pointer md:ml-20   flex-shrink-0  '>
+            <Image className='  '
               src="https://iili.io/pfthtn.jpg" fill
               alt="" />
           </div>
-
           {/* SEARCH BARR  */}
 
 
-          <div className='flex ml-20 justify-between items-center lg:border-2 py-2   rounded-full shadow-xl'>
-            <input type='text' className='flex-grow text-sm text-gray-600 placeholder:truncate placeholder:text-gray-400  pl-2 bg-transparent outline-none ml-3 '
+          <div className=' sm:ml-10 md:ml-20 hidden  min-[400px]:inline-block  justify-between items-center lg:border-2 py-2 shrink rounded-full shadow-xl'>
+            <input type='text' className='flex-grow text-sm text-gray-600 placeholder:truncate  my-5 placeholder:text-gray-400 shrink pl-2 bg-transparent outline-none ml-3 '
               placeholder='Start exploring Nepal..' />
-            <MagnifyingGlassIcon className=' w-10 h-10 hidden lg:inline-flex   bg-green-400 p-2 rounded-full  text-2xl mx-2 ' />
+            <MagnifyingGlassIcon className=' w-10 h-10 hidden min-[500px]:inline-flex   bg-green-400 p-2 rounded-full  text-2xl mx-2 ' />
 
           </div>
-          {/* RIGHT PART  */}
 
-          <div className='flex justify-end items-center'>
-            Contact us on : +977-9863318496
-          </div>
-        </div>
-
-        {/* //BOTTOM NAV */}
-        <div className='bg-black text-white text-center sticky top-20 z-40  shadow-xl'>
-        {navMenu? <XMarkIcon  onClick={()=>toggleMenu()} 
-          className='flex text-right ml-auto cursor-pointer p-1 justify-end w-12 h-12 text-xl lg:hidden'/> : <Bars3Icon onClick={()=>toggleMenu()} 
-          className='flex text-right ml-auto cursor-pointer p-1 justify-end w-12 h-12 text-xl lg:hidden'/>}
-
-          {/* //Drop down suru 
-             //yaha samasya cha.. k bhanda kheri - lg ma hidden hunu bhayena ni ta.
-          */}  
-          
          
-         <div >
+
+          <div className='lg:flex  lg:justify-end items-center hidden  ml-auto'>
+            <div className='flex-col p-1 mx-1'>
+
+           <PhoneIcon className='h-9 w-9 flex mx-auto justify-center text-green-700' /> <h1 className='text-sm font-semibold' >+977-9863318496</h1>
+            </div>
+            <div className='flex-col p-1 mx-1'>
+
+           <EnvelopeIcon className='h-9 w-9 flex mx-auto justify-center text-green-700 '/> <h1 className='text-sm font-semibold' >prajanbhattarai63@gmail.com</h1>
+            </div>
+
+          </div>
         
 
+
+        {/* tala ko menu kholne button */}
+        <div className=' bg-white text-black text-end ml-auto flex justify-end items-center  '>
+        {navMenu? <XMarkIcon  onClick={()=>toggleMenu()} 
+          className='flex text-right shrink-0 font-extrabold cursor-pointer p-1 mx-auto justify-end w-12 h-12 text-xl lg:hidden'/> : <Bars3Icon onClick={()=>toggleMenu()} 
+          className='flex text-right shrink-0 font-extrabold cursor-pointer p-1 mx-auto justify-end w-12 h-12 text-xl lg:hidden'/>}
+        
+          <div></div>
+        </div>
+        </div>
+        
+        {/* menu list */}
         <ul ref={ulRef}
-        className='hidden lg:flex flex-col items-center ml-2 space-y-2 p-4 lg:p-2 lg:flex-row w-full  lg:items-center lg:justify-center lg:mx-auto lg:space-x-1 text-md font-medium'>
-                <li className='lg:w-1/2 ml-1 text-left lg:text-center'>Home</li>
+        className='hidden bg-black text-white lg:flex flex-col lg:flex-row items-center ml-2 space-y-2 p-4 lg:p-2  w-full  lg:items-center lg:justify-center lg:mx-auto lg:space-x-1 text-md font-medium'>
+
+                <li className='lg:w-1/2 ml-1 text-left lg:text-center w-full'>Home</li>
 
              
           {links.map((link)=> {
@@ -113,15 +119,6 @@ function Navbar() {
 
             <li className='w-full lg:w-1/2 text-left lg:text-center'>Contact </li>
             </ul>
-            </div> 
-
-
-
-
-
-
-          <div></div>
-        </div>
       </header>
 
 

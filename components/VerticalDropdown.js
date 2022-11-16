@@ -48,10 +48,6 @@ function VerticalDropdown({ label, dropdowns }) {
                       
                         {(dropdown.items)?<HorizontalDropdown dropdown = {dropdown}/> : dropdown.title }
 
-                        { }
-                        {/* dropdowns[i].title */}
-                        
-
                       </button>
                     )}
                   </Menu.Item>

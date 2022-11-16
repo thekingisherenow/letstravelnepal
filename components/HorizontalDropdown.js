@@ -9,17 +9,19 @@ function HorizontalDropdown({dropdown}) {
     <>
     
 
-        <Menu as="div" onMouseOver={()=>setOpen(true)} onMouseLeave={()=>setOpen(false)}
-        className="relative lg:w-full h-8  inline-block text-left" >
+        <Menu as="div" 
+        onMouseOver={()=>setOpen(true)} onMouseLeave={()=>setOpen(false)}
+        className="relative w-full h-8  inline-block text-left" >
           
               <div onClick={()=>{}}
-               className="inline-flex  justify-center items-center rounded-md  px-4 py-2 text-sm font-medium text-white hover:bg-opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+               className="inline-flex w-full rounded-md  px-4 py-2 text-sm font-medium text-white hover:bg-opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
          {dropdown.title}
          <ChevronRightIcon 
               className="ml-2 hidden lg:inline-block -mr-1 h-5 w-5 text-green-200   hover:text-green-100"
               aria-hidden="true"
             />
-            {/* <PlusIcon className='lg:hidden absolute right-4 w-10 h-10  '/> */}
+            
+            <PlusIcon className='lg:hidden absolute -right-1 top-1 w-8 h-8  '/>
               </div>
           
             <Transition show={true}
@@ -33,7 +35,7 @@ function HorizontalDropdown({dropdown}) {
             >
 
               <Menu.Items static
-              className="lg:absolute fixed z-50 w-1/2 -right-60 -top-2 lg:-right-56 lg:-top-4 my-2  origin-top-right divide-y divide-gray-100 rounded-md bg-black text-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+              className="absolute z-50 w-1/2 right-2 -top-4  lg:-top-2 lg:-right-52 my-2  origin-top-right divide-y divide-gray-100 overflow-y-scroll lg:overflow-hidden  rounded-md bg-black text-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                 <>
               
 
@@ -43,7 +45,7 @@ function HorizontalDropdown({dropdown}) {
                       
                       {open && <div key={item}
                       onMouseOver={()=>setOpen(true)} onMouseLeave={()=>setOpen(false)}
-                      className="px-1 py-1 ">
+                      className="px-1 py-1 w-full ">
                      
                        <Menu.Item >
                        {({ active }) => (
