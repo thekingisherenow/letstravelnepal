@@ -35,7 +35,7 @@ function HorizontalDropdown({dropdown}) {
             >
 
               <Menu.Items static
-              className="absolute z-50 w-1/2 right-2 -top-4  lg:-top-2 lg:-right-52 my-2  origin-top-right divide-y divide-gray-100 overflow-y-scroll lg:overflow-hidden  rounded-md bg-black text-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+              className="absolute z-50 w-1/2 lg:w-full right-2 -top-4  lg:-top-5 text-start lg:-right-52 my-2  origin-top-right divide-y divide-gray-100 overflow-y-scroll lg:overflow-hidden  rounded-md bg-black text-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                 <>
               
 
@@ -51,7 +51,7 @@ function HorizontalDropdown({dropdown}) {
                        {({ active }) => (
                          <button
                            className={`${active ? 'bg-green-500 text-white' : 'text-white'
-                             } group flex w-full items-center text-white rounded-md px-2 py-2 text-sm`}
+                             } group flex w-full items-start text-white rounded-md px-2 py-2 text-sm`}
                          >
                             {item}
                          </button>
