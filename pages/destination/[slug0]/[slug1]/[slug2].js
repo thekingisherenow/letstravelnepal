@@ -18,8 +18,8 @@ function Slug({destination}) {
     const router = useRouter()
     const { slug0,slug1,slug2 } = router.query
 
-    console.log("destination",destination)
-    console.log("destination ko accordianobj",destination.accordianobj)
+    console.log("destination ko valuye",destination)
+    console.log("destination ko accordianobj",destination?.accordianobj)
 
     let [categories] = useState({
       "Overview": [],
@@ -48,7 +48,7 @@ function Slug({destination}) {
   
     ]
   
-    const accordians = destination.accordianobj
+    const accordians = destination?.accordianobj
     
 
    if (!destination){
@@ -354,10 +354,11 @@ export async function getServerSideProps(context) {
 }
 console.log("database connected.")
 
-// console.log(context.query.slug0)
+console.log(context.query.slug0,context.query.slug1,context.query.slug2)
 let destination = await Destination.findOne({slug0:context.query.slug0,
   slug1:context.query.slug1,slug2:context.query.slug2
 })
+console.log("destination.get server side props bhitra",destination)
 
   return {
     props: {destination : JSON.parse(JSON.stringify(destination))}, // will be passed to the page component as props

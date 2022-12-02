@@ -44,7 +44,7 @@ function Navbar() {
 {"label" : "Nepal Tour" , "dropdowns" : [ {"title": 'Nepal Culture and Wildlife Adventure Tour'},{"title": 'Nepal Honeymoon Tour'},{"title": "'Buddhist Pilgrimage Tour'"},{"title": "Best of Nepal Tour "} ]},
 
 
-{"label" : "Adventure" , "dropdowns" : [ {"title": "adventure ho yo "},{"title": "adventure ho yo "},{"title": "adventure ho yo "},{"title": "adventure ho yo "},{"title": "adventure ho yo "},{"title": "adventure ho yo "}]},
+{"label" : "Nepal Fun & Adventure" , "dropdowns" : [ {"title": "adventure ho yo "},{"title": "adventure ho yo "},{"title": "adventure ho yo "},{"title": "adventure ho yo "},{"title": "adventure ho yo "},{"title": "adventure ho yo "}]},
 {"label" : "Travel Info" , "dropdowns" : [ {"title": "travel ho yo "},{"title": "travel ho yo "},{"title": "travel ho yo "},{"title": "travel ho yo "},{"title": "travel ho yo "},{"title": "travel ho yo "}]}
 
 ]

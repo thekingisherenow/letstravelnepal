@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div >
       <Head>
-        <title>Let&aposs travel Nepal</title>
+        <title>Let's travel Nepal</title>
         <meta name="description" content="Travel agency located at Kathmandu,Nepal" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

@@ -49,12 +49,12 @@ function HorizontalDropdown({dropdown}) {
                      
                        <Menu.Item >
                        {({ active }) => (
-                         <div
+                         <button
                            className={`${active ? 'bg-green-500 text-white' : 'text-white'
                              } group flex w-full items-start text-white rounded-md px-2 py-2 text-sm`}
                          >
                             {item}
-                         </div>
+                         </button>
                        )}
                      </Menu.Item>
                      
