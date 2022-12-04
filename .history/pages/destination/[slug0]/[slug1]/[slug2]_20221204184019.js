@@ -81,7 +81,7 @@ function Slug({destination}) {
 
       <div className='col-span-1 lg:col-span-2 lg:px-10 lg:py-4  '>
         {/* TABS */}
-        <div className="tabs w-full max-w-7xl lg:p-1 mx-auto py-2 sm:px-0">
+        <div className="tabs w-full max-w-7xl lg:p-32 mx-auto py-2 sm:px-0">
           <Tab.Group>
             <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 p-1">
               {Object.keys(categories).map((category) => (

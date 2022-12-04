@@ -6,6 +6,10 @@ import {  useRouter } from 'next/router'
 
 function HorizontalDropdown({dropdown , toggleMenu}) {
   const [open, setOpen] = useState(false)
+  // console.log("horizontal dropdown bhitra chiriyo. dropdown.tripName.",dropdown.tripName)
+  // console.log("dropdown.tripSubName",dropdown.tripSubNames)
+  // console.log("dropdown.tripSubNameLinks",dropdown)
+  // console.log(dropdown.tripSubNameLinks[1])
   let trek
   let trek1 
   let trek2 

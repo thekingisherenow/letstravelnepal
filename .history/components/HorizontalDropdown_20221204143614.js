@@ -2,30 +2,18 @@ import React, { useState } from 'react'
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import {  ChevronRightIcon, PlusIcon } from '@heroicons/react/24/solid'
-import {  useRouter } from 'next/router'
+import Link from 'next/link'
 
-function HorizontalDropdown({dropdown , toggleMenu}) {
+function HorizontalDropdown({dropdown}) {
   const [open, setOpen] = useState(false)
+  // console.log("horizontal dropdown bhitra chiriyo. dropdown.tripName.",dropdown.tripName)
+  // console.log("dropdown.tripSubName",dropdown.tripSubNames)
+  // console.log("dropdown.tripSubNameLinks",dropdown)
+  // console.log(dropdown.tripSubNameLinks[1])
   let trek
   let trek1 
   let trek2 
   let trek3 
-  const router = useRouter()
-
-  const LinkPage = (data) =>{
-      console.log("data",data)
-      trek = data.split("/")
-                    // console.log(trek)
-                    trek1 =trek[0]
-                    trek2=trek[1]
-                    trek3=trek[2]
-    router.push({
-      pathname : '/destination/[slug0]/[slug1]/[slug2]',
-      query : {slug0 : trek1 ,slug1 : trek2 ,slug2 : trek3 }
-    })
-    toggleMenu();
-    
-  }
   return (
     <>
     
@@ -57,7 +45,7 @@ function HorizontalDropdown({dropdown , toggleMenu}) {
             >
 
               <Menu.Items static
-              className="absolute z-50 w-1/2 lg:w-[320px] right-2 -top-4  lg:-top-5 text-start lg:-right-80 my-2  origin-top-right 
+              className="absolute z-50 w-1/2 lg:w-full right-2 -top-4  lg:-top-5 text-start lg:-right-52 my-2  origin-top-right 
               divide-y divide-gray-100 overflow-y-scroll lg:overflow-hidden  rounded-md bg-black text-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                 <>
               
@@ -80,14 +68,20 @@ function HorizontalDropdown({dropdown , toggleMenu}) {
                         
                        <Menu.Item >
                        {({ active }) => (
-                        
-                         <div onClick={()=>LinkPage(dropdown.tripSubNameLinks[index])}
+                        <Link className = "cursor-pointer"
+                        href = {{
+                          pathname : '/destination/[slug0]/[slug1]/[slug2]',
+                          query : {slug0 : trek1 ,slug1 : trek2 ,slug2 : trek3 }
+                        }}
+                        >
+                          {console.log(active)}
+                         <div
                            className={`${active ? 'bg-green-500 text-white' : 'text-white'
                              } group flex  items-start text-white rounded-md px-2 py-2 text-sm`}
                          >
                             {item}
                          </div>
-                      
+                         </Link>
                        )}
                      </Menu.Item>
                     </div>

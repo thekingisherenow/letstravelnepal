@@ -27,6 +27,32 @@ function Navbar() {
 
   const [navMenu, setNavMenu] = useState(false)
 
+  const links = [
+    {"label" : "Nepal Trekking" , "dropdowns" : [
+    {"title" :"Annapurna Trekking" , "items" : ["Jomsom Muktinath Trekking", "Extreme Saribung Trekking and Peak Climbing", "Annapurna Sanctuary Trekking", "Khair Lake Trekking", "Nagi Narchyang Trek", "Tatopani Ghorepani Village Trekking", "Annapurna off the beaten trail trek", "Yartung Festival Trekking", "Mustang Tiji Festival Trek", "Australian Camp Dhampus Village Tour", "Annapurna Circuit Trekking", "Annapurna Base Camp Trekking", "Mardi Himal Trek", "Mardi Himal Trek 5 Days", "Upper Mustang Trekking", "Poon Hill Trek 4 days", "Nar Phu Valley Trekking"] } ,
+    {"title" :"Everest Trekking" , "items" : ["Gokyo Chola Pass Trek", "Dumji Festival Trek", "Everest Gokyo Trek", "Everest Three High Passes Trekking", "Classic Jiri Everest Base Camp Trekking", "Everest Panorama Trekking", "Everest Base Camp Trekking", "Mani Rimdu Festival Trekking", "Dudh Kunda Pikey Peak Trek", "pikey peak trek"]},
+    {"title" :"Langtang Region Trek" , "items" : ["Langtang Ganjala Pass Trekking", "Langtang Gosaikunda Trekking", "Langtang Helambu Trekking", "Classic Langtang Valley Trekking", "Tamang Heritage Trail Trekking", "Tamang Heritage and Langtang Valley Trek", "Helambu Circuit Trekking"]},
+    {"title" :"Manaslu Trek" , "items" : ["Lower Manaslu Trekking", "Rupina La Pass Trek", "Manaslu Tsum Valley Trekking", "Manaslu Circuit Trekking", "Tsum Valley Trekking"]},
+    {"title" :"Ganesh Himal Trek" , "items" : ["Ganesh Himal Tamang Heritage Trail Trekking", "Ganesh Himal Panorama Trekking"]},
+    {"title" :"Nepal Village Trek" , "items" : ["Ganesh Himal Tamang Heritage Trail Trekking", "Ghale Gaun Village Trek", "Tatopani Ghorepani Village Trekking", "3 days poon hill trek from Pokhara", "Australian Camp Dhampus Village Tour", "Chisapani Nagarkot Trek", "Balthali Village Trek", "Tamang Heritage Trail Trekking", "Poon Hill Trek 4 days", "pikey peak trek"]},
+
+    {"title" :"Nepal Festival Tours and Treks" , "items" : ["Dumji Festival Trek", "Dawa Dangbo Tsechu Festival", "Yartung Festival Trekking", "Mustang Tiji Festival Trek", "Mani Rimdu Festival Trekking"]},
+
+    {"title" :"Kanchenjunga Trek" , "items" : ["Kanchenjunga Base Camp Trekking", "Kanchenjunga north base camp Trek"]},
+    {"title" :"Rara Trekking" , "items" : ["Rara Lake Trekking"]},
+    {"title" :"Dolpo Trekking" , "items" : ["Lower Dolpo Circuit Trek", "Classic Beni Lower Dolpa Trekking", "upper dolpo trek"]},
+    {"title" :"Humla Trek" , "items" : ["humla limi valley trek"]},
+    {"title" :"9 Best five days trek in Nepal" , "items" : ["Everest Panorama Trekking", "Classic Langtang Valley Trekking", "Balthali Village Trek", "Annapurna Base Camp Trekking", "Mardi Himal Trek", "Tamang Heritage Trail Trekking", "Poon Hill Trek 4 days", "pikey peak trek", "Helambu Circuit Trekking"]}
+    
+]} ,
+
+{"label" : "Nepal Tour" , "dropdowns" : [ {"title": 'Nepal Culture and Wildlife Adventure Tour'},{"title": 'Nepal Honeymoon Tour'},{"title": "'Buddhist Pilgrimage Tour'"},{"title": "Best of Nepal Tour "} ]},
+
+
+{"label" : "Nepal Fun & Adventure" , "dropdowns" : [ {"title": "adventure ho yo "},{"title": "adventure ho yo "},{"title": "adventure ho yo "},{"title": "adventure ho yo "},{"title": "adventure ho yo "},{"title": "adventure ho yo "}]},
+{"label" : "Travel Info" , "dropdowns" : [ {"title": "travel ho yo "},{"title": "travel ho yo "},{"title": "travel ho yo "},{"title": "travel ho yo "},{"title": "travel ho yo "},{"title": "travel ho yo "}]}
+
+]
 
   return (
     <>
@@ -95,7 +121,7 @@ function Navbar() {
               )
               
             })}
-            <Link href= "/aboutus"><li className='w-full lg:w- text-left lg:text-center '>About Us</li></Link>
+            <Link href= "/aboutus"><li className='w-full lg:w-20 text-left lg:text-center '>About Us</li></Link>
 
             <Link href= "/contact"><li className='w-full lg:w-15 text-left lg:text-center lg:mr-2'>Contact </li></Link>
             </ul>

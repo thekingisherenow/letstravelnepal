@@ -35,7 +35,7 @@ function VerticalDropdown({ tripType, dropdowns , toggleMenu }) {
           leaveTo="transform opacity-0 scale-95"
         >
           <Menu.Items static
-           className="lg:absolute w-full lg:-right-3 lg:w-[250px]  lg:top-8 mt-2  origin-top-right divide-y divide-gray-100 rounded-md bg-black shadow-lg
+           className="lg:absolute w-full lg:-right-3 lg:w-[250px]  lg:top-9 mt-2  origin-top-right divide-y divide-gray-100 rounded-md bg-black shadow-lg
             ring-1 ring-black ring-opacity-5 focus:outline-none">
             {open &&
             <div >

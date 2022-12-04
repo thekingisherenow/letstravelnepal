@@ -6,6 +6,10 @@ import {  useRouter } from 'next/router'
 
 function HorizontalDropdown({dropdown , toggleMenu}) {
   const [open, setOpen] = useState(false)
+  // console.log("horizontal dropdown bhitra chiriyo. dropdown.tripName.",dropdown.tripName)
+  // console.log("dropdown.tripSubName",dropdown.tripSubNames)
+  // console.log("dropdown.tripSubNameLinks",dropdown)
+  // console.log(dropdown.tripSubNameLinks[1])
   let trek
   let trek1 
   let trek2 
@@ -24,7 +28,11 @@ function HorizontalDropdown({dropdown , toggleMenu}) {
       query : {slug0 : trek1 ,slug1 : trek2 ,slug2 : trek3 }
     })
     toggleMenu();
-    
+      // <Link className = "cursor-pointer"
+      //                   href = {{
+      //                    
+      //                   }}
+      //                   > </Link >
   }
   return (
     <>
@@ -57,7 +65,7 @@ function HorizontalDropdown({dropdown , toggleMenu}) {
             >
 
               <Menu.Items static
-              className="absolute z-50 w-1/2 lg:w-[320px] right-2 -top-4  lg:-top-5 text-start lg:-right-80 my-2  origin-top-right 
+              className="absolute z-50 w-1/2 lg:w-full right-2 -top-4  lg:-top-5 text-start lg:-right-52 my-2  origin-top-right 
               divide-y divide-gray-100 overflow-y-scroll lg:overflow-hidden  rounded-md bg-black text-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                 <>
               

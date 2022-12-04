@@ -4,7 +4,7 @@ import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon, PlusIcon } from '@heroicons/react/24/solid'
 import HorizontalDropdown from './HorizontalDropdown'
 
-function VerticalDropdown({ tripType, dropdowns , toggleMenu }) {
+function VerticalDropdown({ tripType, dropdowns }) {
   const [open, setOpen] = useState(false)
 
   // console.log("tripType in vertical dropdown imported from navbar",tripType)
@@ -35,8 +35,7 @@ function VerticalDropdown({ tripType, dropdowns , toggleMenu }) {
           leaveTo="transform opacity-0 scale-95"
         >
           <Menu.Items static
-           className="lg:absolute w-full lg:-right-3 lg:w-[250px]  lg:top-8 mt-2  origin-top-right divide-y divide-gray-100 rounded-md bg-black shadow-lg
-            ring-1 ring-black ring-opacity-5 focus:outline-none">
+           className="lg:absolute w-full lg:-right-16 lg:w-[250px]  lg:top-5 mt-2  origin-top-right divide-y divide-gray-100 rounded-md bg-black shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
             {open &&
             <div >
 
@@ -46,7 +45,7 @@ function VerticalDropdown({ tripType, dropdowns , toggleMenu }) {
                     {({ active }) => (
                       <button
                         className={`${active ? 'bg-green-500 text-white' : 'text-white'
-                          } group flex w-full  items-center rounded-md px-2 py-2 text-sm`}
+                          } group flex w-full lg:w-14  items-center rounded-md px-2 py-2 text-sm`}
                       >
                       
                       {/* ///if(arrayName && arrayName.length)  */}
@@ -54,7 +53,7 @@ function VerticalDropdown({ tripType, dropdowns , toggleMenu }) {
 
                       {/* //// yaha yedi subNames ko value 0 cha bhane chevron ko value nahalne */}
                         {(dropdown.tripSubNames && dropdown.tripSubNames.length )?
-                        <HorizontalDropdown dropdown = {dropdown} toggleMenu={toggleMenu} />  : <span>{dropdown.tripName} </span>} 
+                        <HorizontalDropdown dropdown = {dropdown}/>  : <span>{dropdown.tripName} </span>} 
 
                       </button>
                     )}

@@ -57,13 +57,13 @@ function Slug({destination}) {
    else {
   
   return (
-    <div className='bg-white'>
+    <>
     {/* IMAGE  */}
     <div className='relative'>
 
       <img src={destination.trekImage}
         className='w-full image-cover  ' />
-      <h1 className='absolute inset-x-0 bottom-8 text-center lg:text-5xl text-2xl font-bold  text-white'>{destination.trekName}</h1>
+      <h1 className='absolute inset-x-0 bottom-8 text-center text-5xl font-bold  text-white'>{destination.trekName}</h1>
     </div>
 
 
@@ -79,9 +79,9 @@ function Slug({destination}) {
 
 
 
-      <div className='col-span-1 lg:col-span-2 lg:px-10 lg:py-4  '>
+      <div className='col-span-1 lg:col-span-2 px-10 py-4  '>
         {/* TABS */}
-        <div className="tabs w-full max-w-7xl lg:p-1 mx-auto py-2 sm:px-0">
+        <div className="tabs w-full max-w-7xl p-32 mx-auto py-2 sm:px-0">
           <Tab.Group>
             <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 p-1">
               {Object.keys(categories).map((category) => (
@@ -341,7 +341,7 @@ function Slug({destination}) {
 
 
 
-  </div>
+  </>
   )
 }
 }

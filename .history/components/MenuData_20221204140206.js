@@ -1,3 +1,4 @@
+import React from 'react'
 const menuItems = [{
         "tripType" : "Nepal Trekking" , "tripTypeLink" : "nepal-trekking" ,
         "dropdowns" : [
