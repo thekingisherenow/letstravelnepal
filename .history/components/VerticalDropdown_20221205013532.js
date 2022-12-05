@@ -88,7 +88,7 @@ function VerticalDropdown({ tripType, dropdowns , toggleMenu ,mobileCheck }) {
                           } group flex w-full   items-center border-b-2 border-gray-500   rounded-md px-2 py-2 text-sm`}
                       >
                         {(dropdown.tripSubNames && dropdown.tripSubNames.length )?
-                        <HorizontalDropdown dropdown = {dropdown} toggleMenu={toggleMenu} togglePlusButton={togglePlusButton} />  : <span className='px-4 text-left'>{dropdown.tripName} </span>} 
+                        <HorizontalDropdown dropdown = {dropdown} toggleMenu={toggleMenu} />  : <span className='px-4 text-left'>{dropdown.tripName} </span>} 
 
                       </button>
                     )}

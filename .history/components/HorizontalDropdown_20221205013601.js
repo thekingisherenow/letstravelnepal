@@ -37,7 +37,7 @@ function HorizontalDropdown({dropdown , toggleMenu,togglePlusButton}) {
         onMouseOver={()=>setOpen(true)} onMouseLeave={()=>setOpen(false)}
         className="relative w-full h-8 lg:w-[500px]  border-b-1   inline-block text-left" >
           
-              <div 
+              <div onClick={()=>{}}
                className="inline-flex w-full rounded-md  px-4 py-2 text-sm font-medium text-white hover:bg-opacity-80 focus:outline-none 
                focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
          {dropdown.tripName}
@@ -46,7 +46,7 @@ function HorizontalDropdown({dropdown , toggleMenu,togglePlusButton}) {
               aria-hidden="true"
             />
             
-            <PlusIcon onClick={()=>togglePlusButton}
+            <PlusIcon
              className='lg:hidden absolute -right-1 border-l-2  border-gray-300 top-1 w-8 h-8  '/>
               </div>
           
@@ -85,7 +85,7 @@ function HorizontalDropdown({dropdown , toggleMenu,togglePlusButton}) {
                        <Menu.Item >
                        {({ active }) => (
                         
-                         <div 
+                         <div onClick={}
                            className={`${active ? 'bg-green-500 text-white' : 'text-white'
                              } group flex  items-start border-b-2 border-gray-500 text-white rounded-md px-2 py-2 text-sm`}
                          >

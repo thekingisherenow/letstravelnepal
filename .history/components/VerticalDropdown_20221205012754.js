@@ -6,13 +6,9 @@ import HorizontalDropdown from './HorizontalDropdown'
 
 function VerticalDropdown({ tripType, dropdowns , toggleMenu ,mobileCheck }) {
   const [open, setOpen] = useState(false)
-//  console.log("the value of mobilecheck inside the component is :",mobileCheck)
-  const [secondOpen, setSecondOpen] = useState(false)
+ console.log("the value of mobilecheck inside the component is :",mobileCheck)
   
-  const togglePlusButton = () => {
-      setSecondOpen(!secondOpen)
 
-  }
   // console.log("tripType in vertical dropdown imported from navbar",tripType)
   // console.log("dropdowns in vertical dropdown imported from navbar",dropdowns)
   return (
@@ -76,19 +72,19 @@ function VerticalDropdown({ tripType, dropdowns , toggleMenu ,mobileCheck }) {
            className="lg:absolute w-full lg:-right-24 lg:w-[250px]  lg:top-8 mt-2  origin-top-right  rounded-md bg-black shadow-lg
             ring-1 ring-black ring-opacity-5 focus:outline-none">
          
-            {secondOpen && <div>
+            <>
               {dropdowns.map((dropdown, i) => {
                 console.log("non-static wala menu item bhitra")
 
                 return (
                   <Menu.Item key={i} >
                     {({ active }) => (
-                      <button onClick={()=>setSecondOpen(!secondOpen)}
+                      <button 
                         className={`${active ? 'bg-green-500 text-white' : 'text-white'
                           } group flex w-full   items-center border-b-2 border-gray-500   rounded-md px-2 py-2 text-sm`}
                       >
                         {(dropdown.tripSubNames && dropdown.tripSubNames.length )?
-                        <HorizontalDropdown dropdown = {dropdown} toggleMenu={toggleMenu} togglePlusButton={togglePlusButton} />  : <span className='px-4 text-left'>{dropdown.tripName} </span>} 
+                        <HorizontalDropdown dropdown = {dropdown} toggleMenu={toggleMenu} />  : <span className='px-4 text-left'>{dropdown.tripName} </span>} 
 
                       </button>
                     )}
@@ -97,7 +93,7 @@ function VerticalDropdown({ tripType, dropdowns , toggleMenu ,mobileCheck }) {
 
               })}
 
-            </div> }
+            </> 
 
           </Menu.Items>
           }

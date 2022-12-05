@@ -26,7 +26,7 @@ const menuItems = [{
                 {"tripName": "Best of Nepal Tour", "tripNameLink": "nepal-tour/best-of-nepal-tour","tripSubNames":[],"tripSubNameLinks":[]}
                 
         ]},
-        {"tripType" : "Adventure & Fun " , "tripTypeLink" : "adventure-fun-trips-in-nepal" ,
+        {"tripType" : "Adventure & Fun Activities" , "tripTypeLink" : "adventure-fun-trips-in-nepal" ,
         "dropdowns" : [
             
             {"tripName": "Nepal Peak Climbing", "tripNameLink": "nepal-peak-climbing", "tripSubNames": ["Singu Chuli Peak Climbing", "Pisang Peak Climbing", "Island Peak Climbing", "Tent Peak Climbing", "Mera Peak Climbing"], "tripSubNameLinks": ["adventure-fun-trips-in-nepal/nepal-peak-climbing/singu-chuli-peak-climbing", "adventure-fun-trips-in-nepal/nepal-peak-climbing/pisang-peak-climbing", "adventure-fun-trips-in-nepal/nepal-peak-climbing/island-peak-climbing", "adventure-fun-trips-in-nepal/nepal-peak-climbing/tent-peak-climbing", "adventure-fun-trips-in-nepal/nepal-peak-climbing/mera-peak-climbing"]},

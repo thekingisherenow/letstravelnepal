@@ -85,7 +85,7 @@ function HorizontalDropdown({dropdown , toggleMenu,togglePlusButton}) {
                        <Menu.Item >
                        {({ active }) => (
                         
-                         <div 
+                         <div onClick={}
                            className={`${active ? 'bg-green-500 text-white' : 'text-white'
                              } group flex  items-start border-b-2 border-gray-500 text-white rounded-md px-2 py-2 text-sm`}
                          >

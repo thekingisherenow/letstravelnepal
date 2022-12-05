@@ -1,26 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon, PlusIcon } from '@heroicons/react/24/solid'
 import HorizontalDropdown from './HorizontalDropdown'
 
-function VerticalDropdown({ tripType, dropdowns , toggleMenu ,mobileCheck }) {
+function VerticalDropdown({ tripType, dropdowns , toggleMenu }) {
   const [open, setOpen] = useState(false)
-//  console.log("the value of mobilecheck inside the component is :",mobileCheck)
-  const [secondOpen, setSecondOpen] = useState(false)
-  
-  const togglePlusButton = () => {
-      setSecondOpen(!secondOpen)
 
-  }
   // console.log("tripType in vertical dropdown imported from navbar",tripType)
   // console.log("dropdowns in vertical dropdown imported from navbar",dropdowns)
   return (
-    <>
+    <div>
       <Menu as="div" onMouseOver={()=>setOpen(true)} onMouseLeave={()=>setOpen(false)}
       className="relative inline-block w-full  ">
         <div>
-          <Menu.Button className="flex w-full  justify-start lg:justify-center text-center
+          <Menu.Button className="flex w-full lg:w-28 justify-start 
            rounded-md bg-black bg-opacity-20 px-0 lg:py-2 py-1 text-md  text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
             {tripType}
 
@@ -40,24 +34,25 @@ function VerticalDropdown({ tripType, dropdowns , toggleMenu ,mobileCheck }) {
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         >
-
-            {/* // eeuta tarika k cha bhane..CONDITIONAL RENDERING Menu.items  */}
-          {mobileCheck? 
           <Menu.Items static
-           className="lg:absolute w-full lg:-right-24 lg:w-[250px]  lg:top-8 mt-2  origin-top-right  rounded-md bg-black shadow-lg
+           className="lg:absolute w-full lg:-right-3 lg:w-[250px]  lg:top-8 mt-2  origin-top-right  rounded-md bg-black shadow-lg
             ring-1 ring-black ring-opacity-5 focus:outline-none">
             {open &&
             <div >
 
               {dropdowns.map((dropdown, i) => {
-                console.log("static wala menu item bhitra")
                 return (
                   <Menu.Item key={i} >
-                    {({ active}) => (
+                    {({ active }) => (
                       <button
                         className={`${active ? 'bg-green-500 text-white' : 'text-white'
-                          } group flex w-full   items-center border-b-2 border-gray-500   rounded-md px-2 py-2 text-sm`}
+                          } group flex w-full   items-center rounded-md px-2 py-2 text-sm`}
                       >
+                      
+                      {/* ///if(arrayName && arrayName.length)  */}
+                      {/* if the array exists and the value of length is greater than 0 */}
+
+                      {/* //// yaha yedi subNames ko value 0 cha bhane chevron ko value nahalne */}
                         {(dropdown.tripSubNames && dropdown.tripSubNames.length )?
                         <HorizontalDropdown dropdown = {dropdown} toggleMenu={toggleMenu} />  : <span className='px-4 text-left'>{dropdown.tripName} </span>} 
 
@@ -71,40 +66,9 @@ function VerticalDropdown({ tripType, dropdowns , toggleMenu ,mobileCheck }) {
             </div> }
 
           </Menu.Items>
-          :
-          <Menu.Items 
-           className="lg:absolute w-full lg:-right-24 lg:w-[250px]  lg:top-8 mt-2  origin-top-right  rounded-md bg-black shadow-lg
-            ring-1 ring-black ring-opacity-5 focus:outline-none">
-         
-            {secondOpen && <div>
-              {dropdowns.map((dropdown, i) => {
-                console.log("non-static wala menu item bhitra")
-
-                return (
-                  <Menu.Item key={i} >
-                    {({ active }) => (
-                      <button onClick={()=>setSecondOpen(!secondOpen)}
-                        className={`${active ? 'bg-green-500 text-white' : 'text-white'
-                          } group flex w-full   items-center border-b-2 border-gray-500   rounded-md px-2 py-2 text-sm`}
-                      >
-                        {(dropdown.tripSubNames && dropdown.tripSubNames.length )?
-                        <HorizontalDropdown dropdown = {dropdown} toggleMenu={toggleMenu} togglePlusButton={togglePlusButton} />  : <span className='px-4 text-left'>{dropdown.tripName} </span>} 
-
-                      </button>
-                    )}
-                  </Menu.Item>
-                )
-
-              })}
-
-            </div> }
-
-          </Menu.Items>
-          }
-          
         </Transition>
       </Menu>
-    </>
+    </div>
   )
 }
 
