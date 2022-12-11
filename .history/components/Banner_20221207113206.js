@@ -1,0 +1,33 @@
+import Image from 'next/image'
+import React from 'react'
+
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
+
+function Banner() {
+  return (
+   
+    <Carousel className='m-5'
+    autoPlay infiniteLoop showStatus={false}
+    showIndicators={false} showThumbs={false}
+    >
+    <div>
+        <img loading='lazy'
+        src="https://iili.io/pCGTdB.jpg" />
+        <p className="legend">Kathmandu Durbar Square</p>
+    </div>
+    <div>
+        <img loading='lazy'
+        src="https://iili.io/pC0PLv.jpg" />
+        <p className="legend">Macchapuchrre regning over Pokhara</p>
+    </div>
+    <div>
+        <img loading='lazy'
+        src="https://iili.io/pAbMe1.jpg" />
+        <p className="legend">Shey Phoksundo lake,one of the untouched lakes in the west part of the country.</p>
+    </div>
+</Carousel>
+  )
+}
+
+export default Banner

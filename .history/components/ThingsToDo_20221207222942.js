@@ -1,0 +1,69 @@
+import Image from 'next/image'
+import React from 'react'
+import styles from "../styles/Home.module.css"
+
+function ThingsToDo() {
+
+    console.log("styles",styles)
+    return (
+        <section className='w-full'>
+            <div className=' h-[1500px] sticky  md:h-[770px] lg:h-[550px]   w-full bg-white mb-10 '>
+                
+                <div  
+                className={styles.backgroundimage}>
+                    <div className='absolute top-0 w-full'>
+
+                 
+                    <h1 className="text-2xl font-semibold text-center p-4 mt-2  text-gray-800 capitalize xl:text-5xl lg:text-4xl dark:text-white">
+                        Things To Do
+                    </h1>
+                        {/* BORDER BELOW TITLE */}
+                    <div className="flex justify-center  mt-2">
+                        <span className="inline-block w-40 h-1 bg-green-500 rounded-full"></span>
+                        <span className="inline-block w-3 h-1 mx-1 bg-green-500 rounded-full"></span>
+                        <span className="inline-block w-1 h-1 bg-green-500 rounded-full"></span>
+                    </div>
+
+                    {/* Containers */}
+                    <div className="container  px-1 py-10 ">
+                        <div className="flex flex-wrap max-w-2xl justify-center -m-4">
+                            <div className="lg:w-1/3 md:w-1/2 p-4 cursor-pointer  w-full">
+                                <a className="block relative h-96 md:h-60 rounded overflow-hidden">
+                                    <img alt="ecommerce" className="object-cover object-top border-2 border-white  w-full h-full block" src="https://iili.io/HCD1P0Q.jpg" />
+                                    <h1 className='absolute text-white bottom-3 text-xl  w-full text-center '> Nepal-Trekking - 73 packages</h1>
+                                </a>
+
+                            </div>
+                            <div className="lg:w-1/3 md:w-1/2 p-4 cursor-pointer  w-full">
+                                <a className="block relative h-96 md:h-60 rounded overflow-hidden">
+                                    <img alt="ecommerce" className="object-cover object-top border-2 border-white  w-full h-full block" src="https://iili.io/HCD1LdB.jpg" />
+                                    <h1 className='absolute text-white bottom-3 text-xl  w-full text-center '> Nepal-Trekking</h1>
+                                </a>
+
+                            </div>
+                            <div className="lg:w-1/3 md:w-1/2 p-4 cursor-pointer w-full">
+                                <a className="block relative h-96 md:h-60 rounded overflow-hidden">
+                                    <img alt="ecommerce" className="object-cover object-top border-2 border-white  w-full h-full block" src="https://iili.io/HCD1igV.jpg" />
+                                    <h1 className='absolute text-white bottom-3 text-xl  w-full text-center '> Nepal-Trekking</h1>
+                                </a>
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+                    <div className='w-full flex justify-center mx-auto'>
+                        <button className=" m-4 bg-green-500 hover:bg-green-700 text-white font-bold py-2  px-4 rounded-full">More Activities</button>
+                    </div>
+
+                </div>
+
+                </div>
+            </div>
+        </section>
+    )
+}
+
+export default ThingsToDo
