@@ -49,10 +49,8 @@ function VerticalDropdown({ tripType, dropdowns , toggleMenu ,mobileCheck , mobi
               aria-hidden="true"
             />
         
-            {( open) ? <MinusIcon onClick={()=>changeStates()}
-            className='lg:hidden absolute right-8 font-bold -top-2 border-l-2 border-gray-600 w-10 h-12  p-2  '/>:
-            <PlusIcon onClick={()=>changeStates()}
-            className='lg:hidden absolute right-8 font-bold -top-2 border-l-2 border-gray-600 w-10 h-12  p-2  '/>}
+            {( open) ? <MinusIcon className='lg:hidden absolute right-8 font-bold -top-2 border-l-2 border-gray-600 w-10 h-12  p-2  '/>:
+            <PlusIcon className='lg:hidden absolute right-8 font-bold -top-2 border-l-2 border-gray-600 w-10 h-12  p-2  '/>}
           </Menu.Button>
         </div>
         <Transition show={true}

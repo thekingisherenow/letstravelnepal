@@ -36,9 +36,11 @@ function VerticalDropdown({ tripType, dropdowns , toggleMenu ,mobileCheck , mobi
     <>
       <Menu as="div" 
     
-      className="relative inline-block w-full">
+      className="relative inline-block w-full  ">
         <div>
           <Menu.Button   
+          // onMouseOver={()=>(mobileScreen ===false)?setOpen(true) :void 0 } onMouseLeave={()=>(mobileScreen ===false)?setOpen(false):void 0}
+           onClick={()=>changeStates()}
            className="flex w-full  justify-start lg:justify-center text-center
            rounded-md bg-black bg-opacity-20 px-0 lg:py-2 py-1 text-md  text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2
             focus-visible:ring-white focus-visible:ring-opacity-75">
@@ -49,10 +51,8 @@ function VerticalDropdown({ tripType, dropdowns , toggleMenu ,mobileCheck , mobi
               aria-hidden="true"
             />
         
-            {( open) ? <MinusIcon onClick={()=>changeStates()}
-            className='lg:hidden absolute right-8 font-bold -top-2 border-l-2 border-gray-600 w-10 h-12  p-2  '/>:
-            <PlusIcon onClick={()=>changeStates()}
-            className='lg:hidden absolute right-8 font-bold -top-2 border-l-2 border-gray-600 w-10 h-12  p-2  '/>}
+            {(secondOpen || open) ? <MinusIcon className='lg:hidden absolute right-8 font-bold -top-2 border-l-2 border-gray-600 w-10 h-12  p-2  '/>:
+            <PlusIcon className='lg:hidden absolute right-8 font-bold -top-2 border-l-2 border-gray-600 w-10 h-12  p-2  '/>}
           </Menu.Button>
         </div>
         <Transition show={true}
@@ -82,7 +82,7 @@ function VerticalDropdown({ tripType, dropdowns , toggleMenu ,mobileCheck , mobi
           className="lg:absolute w-full lg:-right-24 lg:w-[250px]  lg:top-8 mt-2  origin-top-right  rounded-md bg-black shadow-lg
            ring-1 ring-black ring-opacity-5 focus:outline-none">
         
-           {open && <div 
+           {secondOpen && <div 
           >
              {dropdowns.map((dropdown, i) => {
               //  console.log("non-static wala menu item bhitra")

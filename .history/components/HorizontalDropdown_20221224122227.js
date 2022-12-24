@@ -53,12 +53,12 @@ function HorizontalDropdown({dropdown , toggleMenu,togglePlusButton,mobileCheck,
                 <span className='text-left'
                  onClick={()=>LinkTwo(dropdown.tripNameLink)}>
                   {dropdown.tripName}</span>
-         <ChevronRightIcon onClick={()=> setOpen(!open)}
+         <ChevronRightIcon 
               className="ml-2 hidden absolute lg:inline-block right-1 -mr-1 h-5 w-5 text-green-200   hover:text-green-100"
               aria-hidden="true"
             />
             
-            <PlusIcon onClick={()=> setOpen(!open)}
+            <PlusIcon 
              className='lg:hidden absolute right-6 font-bold -top-2 border-l-2 border-gray-600 w-10 h-12  p-2  '/>
               </div>
           
@@ -87,7 +87,7 @@ function HorizontalDropdown({dropdown , toggleMenu,togglePlusButton,mobileCheck,
 
                     return ( 
                       <Fragment key={item}>
-                      {open && <div 
+                      {secondOpen && <div 
                       onMouseOver={()=>setOpen(true)} onMouseLeave={()=>setOpen(false)}
                       className="px-1 py-1  ">
                         
